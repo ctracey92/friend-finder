@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>(NERDY)Friend Finder</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+
+
+        <form>
+                <div class="form-group">
+                  <label for="name">Name (required)</label>
+                  <input type="text" class="form-control" id="name" placeholder="" required>
+                </div>
+                <div class="form-group">
+                        <label for="picture">Link to YOUR picture (required)</label>
+                        <input type="text" class="form-control" id="picture" placeholder="" required>
+                      </div>                
+                <div class="form-group">
+                  <label for="survey">Marvel is better than DC</label>
+                  <select required class="form-control" id="q1">
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                        <label for="survey">Batman could beat Superman</label>
+                        <select required class="form-control" id="q2">
+                          <option value="1">1 (Strongly Disagree)</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                  <label for="survey">Warlock is the most underrated D&D class</label>
+                  <select required class="form-control" id="q3">
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="survey">Bard is the worst D&D class EVER</label>
+                  <select required class="form-control" id="q4">
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                        <label for="survey">Star Wars is better than Star Trek</label>
+                        <select required class="form-control" id="q5">
+                          <option value="1">1 (Strongly Disagree)</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                  <label for="survey">Fantasy is better than Sci-Fi</label>
+                  <select required class="form-control" id="q6">
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="survey">Console games are better than PC games</label>
+                  <select required class="form-control" id="q7">
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                        <label for="survey">Magneto was right</label>
+                        <select required class="form-control" id="q8">
+                          <option value="1">1 (Strongly Disagree)</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                  <label for="survey">I like going to Cons</label>
+                  <select required class="form-control" id="q9">
+                    <option value="1">1 (Strongly Disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                        <label for="survey">Fandoms are family</label>
+                        <select required class="form-control" id="q10">
+                          <option value="1">1 (Strongly Disagree)</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                      </div>                
+            <button type="submit" id="submitBtn" class="btn btn-primary">Submit</button>
+        </form>
+
+
+<script type="text/javascript">
+
+$("#submitBtn").on("click",function(){
+    event.preventDefault();
+    
+    var dataGrabbed = {
+        name: $("#name").val().trim(),
+        photo: $("#picture").val().trim(),
+        scores: [
+            $("#q1").val(),
+            $("#q2").val(),
+            $("#q3").val(),
+            $("#q4").val(),
+            $("#q5").val(),
+            $("#q6").val(),
+            $("#q7").val(),
+            $("#q8").val(),
+            $("#q9").val(),
+            $("#q10").val(),
+        ]
+    }
+    console.log(dataGrabbed);
+
+    $.post("/api/friends",dataGrabbed, function(data){
+        if (data) {console.log("this worked")}
+    })
+
+
+});
+</script>
+
+
+</body>
+</html>
