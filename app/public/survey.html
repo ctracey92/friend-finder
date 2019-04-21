@@ -13,18 +13,21 @@
 </head>
 <body>
 
-
-        <form>
+<div class="container">
+    <h1>Survey Questions:</h1>
+    <hr>
+    <form>
                 <div class="form-group">
-                  <label for="name">Name (required)</label>
+                  <label for="name"><h3>Name (required)</h3></label>
                   <input type="text" class="form-control" id="name" placeholder="" required>
                 </div>
                 <div class="form-group">
-                        <label for="picture">Link to YOUR picture (required)</label>
+                        <label for="picture"><h3>Link to YOUR picture (required)</h3></label>
                         <input type="text" class="form-control" id="picture" placeholder="" required>
-                      </div>                
+                      </div>  
+                <hr>            
                 <div class="form-group">
-                  <label for="survey">Marvel is better than DC</label>
+                  <label for="survey"><h5>Marvel is better than DC</h5></label>
                   <select required class="form-control" id="q1">
                     <option value="X">Select an option</option>
                     <option value="1">1 (Strongly Disagree)</option>
@@ -35,7 +38,7 @@
                   </select>
                 </div>
                 <div class="form-group">
-                        <label for="survey">Batman could beat Superman</label>
+                        <label for="survey"><h5>Batman could beat Superman</h5></label>
                         <select required class="form-control" id="q2">
                           <option value="X">Select an option</option>
                             <option value="1">1 (Strongly Disagree)</option>
@@ -46,7 +49,7 @@
                         </select>
                 </div>
                 <div class="form-group">
-                  <label for="survey">Warlock is the most underrated D&D class</label>
+                  <label for="survey"><h5>Warlock is the most underrated D&D class</h5></label>
                   <select required class="form-control" id="q3">
                     <option value="X">Select an option</option>
                     <option value="1">1 (Strongly Disagree)</option>
@@ -57,7 +60,7 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="survey">Bard is the worst D&D class EVER</label>
+                  <label for="survey"><h5>Bard is the worst D&D class EVER</h5></label>
                   <select required class="form-control" id="q4">
                     <option value="X">Select an option</option>
                     <option value="1">1 (Strongly Disagree)</option>
@@ -68,7 +71,7 @@
                   </select>
                 </div>
                 <div class="form-group">
-                        <label for="survey">Star Wars is better than Star Trek</label>
+                        <label for="survey"><h5>Star Wars is better than Star Trek</h5> </label>
                         <select required class="form-control" id="q5">
                           <option value="X">Select an option</option>
                             <option value="1">1 (Strongly Disagree)</option>
@@ -79,7 +82,7 @@
                         </select>
                 </div>
                 <div class="form-group">
-                  <label for="survey">Fantasy is better than Sci-Fi</label>
+                  <label for="survey"><h5>Fantasy is better than Sci-Fi</h5></label>
                   <select required class="form-control" id="q6">
                     <option value="X">Select an option</option>
                     <option value="1">1 (Strongly Disagree)</option>
@@ -90,7 +93,7 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="survey">Console games are better than PC games</label>
+                  <label for="survey"><h5>Console games are better than PC games</h5></label>
                   <select required class="form-control" id="q7">
                     <option value="X">Select an option</option>
                     <option value="1">1 (Strongly Disagree)</option>
@@ -101,7 +104,7 @@
                   </select>
                 </div>
                 <div class="form-group">
-                        <label for="survey">Magneto was right</label>
+                        <label for="survey"><h5>Magneto was right</h5></label>
                         <select required class="form-control" id="q8">
                           <option value="X">Select an option</option>
                             <option value="1">1 (Strongly Disagree)</option>
@@ -112,7 +115,7 @@
                         </select>
                 </div>
                 <div class="form-group">
-                  <label for="survey">I like going to Cons</label>
+                  <label for="survey"><h5>I like going to Cons</h5></label>
                   <select required class="form-control" id="q9">
                     <option value="X">Select an option</option>
                     <option value="1">1 (Strongly Disagree)</option>
@@ -123,7 +126,7 @@
                   </select>
                 </div>
                 <div class="form-group">
-                        <label for="survey">Fandoms are family</label>
+                        <label for="survey"><h5>Fandoms are family</h5></label>
                         <select required class="form-control" id="q10">
                           <option value="X">Select an option</option>
                             <option value="1">1 (Strongly Disagree)</option>
@@ -132,33 +135,37 @@
                           <option value="4">4</option>
                           <option value="5">5 (Strongly Agree)</option>
                         </select>
-                      </div>                
-            <button type="submit" id="submitBtn" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Submit</button>
-        </form>
+                </div>                
+            <button type="submit" id="submitBtn" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">Submit</button>
+    </form>
+    <p>
+        <a href="/api/friends" target="blank">API Friends List</a> | <a href="https://github.com/ctracey92/friend-finder" target="blank">GitHub Repo</a>
+    </p>
+</div>
+        
 
-        <div id="myModal" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">New Friend!</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <p id="newFriend"></p>
-                      <img id="newFriendImage" src="" alt="New Friend" height="150" width="150">
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+<div id="myModal" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New Friend!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+            </div>
+            <div class="modal-body">
+                <p id="newFriend"></p>
+                <img id="newFriendImage" src="" alt="New Friend" height="150" width="150">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>    
 
 
 <script type="text/javascript">
-
 $("#submitBtn").on("click",function(){
     event.preventDefault();
         var scores =[
@@ -211,7 +218,6 @@ $("#submitBtn").on("click",function(){
 
 });
 </script>
-
 
 </body>
 </html>
