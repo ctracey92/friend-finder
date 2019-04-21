@@ -26,6 +26,7 @@
                 <div class="form-group">
                   <label for="survey">Marvel is better than DC</label>
                   <select required class="form-control" id="q1">
+                    <option value="X">Select an option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -36,7 +37,8 @@
                 <div class="form-group">
                         <label for="survey">Batman could beat Superman</label>
                         <select required class="form-control" id="q2">
-                          <option value="1">1 (Strongly Disagree)</option>
+                          <option value="X">Select an option</option>
+                            <option value="1">1 (Strongly Disagree)</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
                           <option value="4">4</option>
@@ -46,6 +48,7 @@
                 <div class="form-group">
                   <label for="survey">Warlock is the most underrated D&D class</label>
                   <select required class="form-control" id="q3">
+                    <option value="X">Select an option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -56,6 +59,7 @@
                 <div class="form-group">
                   <label for="survey">Bard is the worst D&D class EVER</label>
                   <select required class="form-control" id="q4">
+                    <option value="X">Select an option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -66,7 +70,8 @@
                 <div class="form-group">
                         <label for="survey">Star Wars is better than Star Trek</label>
                         <select required class="form-control" id="q5">
-                          <option value="1">1 (Strongly Disagree)</option>
+                          <option value="X">Select an option</option>
+                            <option value="1">1 (Strongly Disagree)</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
                           <option value="4">4</option>
@@ -76,6 +81,7 @@
                 <div class="form-group">
                   <label for="survey">Fantasy is better than Sci-Fi</label>
                   <select required class="form-control" id="q6">
+                    <option value="X">Select an option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -86,6 +92,7 @@
                 <div class="form-group">
                   <label for="survey">Console games are better than PC games</label>
                   <select required class="form-control" id="q7">
+                    <option value="X">Select an option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -96,7 +103,8 @@
                 <div class="form-group">
                         <label for="survey">Magneto was right</label>
                         <select required class="form-control" id="q8">
-                          <option value="1">1 (Strongly Disagree)</option>
+                          <option value="X">Select an option</option>
+                            <option value="1">1 (Strongly Disagree)</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
                           <option value="4">4</option>
@@ -106,6 +114,7 @@
                 <div class="form-group">
                   <label for="survey">I like going to Cons</label>
                   <select required class="form-control" id="q9">
+                    <option value="X">Select an option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -116,26 +125,43 @@
                 <div class="form-group">
                         <label for="survey">Fandoms are family</label>
                         <select required class="form-control" id="q10">
-                          <option value="1">1 (Strongly Disagree)</option>
+                          <option value="X">Select an option</option>
+                            <option value="1">1 (Strongly Disagree)</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
                           <option value="4">4</option>
                           <option value="5">5 (Strongly Agree)</option>
                         </select>
                       </div>                
-            <button type="submit" id="submitBtn" class="btn btn-primary">Submit</button>
+            <button type="submit" id="submitBtn" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Submit</button>
         </form>
+
+        <div id="myModal" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">New Friend!</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p id="newFriend"></p>
+                      <img id="newFriendImage" src="" alt="New Friend" height="150" width="150">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
 
 <script type="text/javascript">
 
 $("#submitBtn").on("click",function(){
     event.preventDefault();
-    
-    var dataGrabbed = {
-        name: $("#name").val().trim(),
-        photo: $("#picture").val().trim(),
-        scores: [
+        var scores =[
             $("#q1").val(),
             $("#q2").val(),
             $("#q3").val(),
@@ -146,13 +172,41 @@ $("#submitBtn").on("click",function(){
             $("#q8").val(),
             $("#q9").val(),
             $("#q10").val(),
-        ]
+        ] 
+        var name = $("#name").val().trim();
+        var photo = $("#picture").val().trim();
+        function validation(){
+            for (var i = 0; i<scores.length; i++){
+             var filledOut = true;
+            if(scores[i] === "X" || name === "" || photo === ""){
+                filledOut = false;
+            }
+            } 
+            return filledOut
+        }
+   
+    if (validation()){
+        var dataGrabbed = {
+        name: name,
+        photo: photo,
+        scores: scores
     }
-    console.log(dataGrabbed);
+    $("form").trigger("reset");
+
 
     $.post("/api/friends",dataGrabbed, function(data){
-        if (data) {console.log("this worked")}
+        console.log(data)
+        $("#newFriend").text("Your new friend is: " + data.name)
+        $("#newFriendImage").attr("src",data.photo)
     })
+
+    $('#myModal').modal("show");
+    }
+    else{
+        alert("Please fill out the form completely")   
+    }
+    
+
 
 
 });

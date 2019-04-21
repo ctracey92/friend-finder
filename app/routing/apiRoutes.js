@@ -18,12 +18,10 @@ module.exports = function(app){
             difference+= Math.abs(userNum - friendNum);
             }
             scoresComp.push(difference);
-
-            console.log(friendsArr[i].scores,i,friendsArr[i].name)
         }
         for(var d = 0; d<scoresComp.length; d++){
             if (scoresComp[d] === Math.min(...scoresComp))[
-                console.log(friendsArr[d],"THIS IS YOUR NEW FRIEND")
+                res.json(friendsArr[d])
             ]
         }
         console.log(scoresComp,"SCORES");
