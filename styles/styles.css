@@ -1,0 +1,9 @@
+body {background: url("./comic-book-faces\ \(1\).jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    }
+
+.container {
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC');
+    opacity: .85;
+}
